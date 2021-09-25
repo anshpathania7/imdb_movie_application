@@ -27,7 +27,6 @@ class ImdbDetailedScreen extends StatelessWidget {
         child: Column(
           children: [
             Stack(
-              clipBehavior: Clip.antiAlias,
               alignment: Alignment.bottomCenter,
               children: [
                 Container(
@@ -40,7 +39,7 @@ class ImdbDetailedScreen extends StatelessWidget {
                         kDarkBlue.withOpacity(0.5),
                         kDarkBlue.withOpacity(0.7),
                         kDarkBlue.withOpacity(0.9),
-                        kDarkBlue.withOpacity(1),
+                        kDarkBlue,
                         kDarkBlue,
                       ],
                       begin: Alignment.topCenter,
@@ -50,10 +49,9 @@ class ImdbDetailedScreen extends StatelessWidget {
                   child: OctoImage.fromSet(
                     octoSet: OctoSet.blurHash("LEHV6nWB2yk8pyo0adR*.7kCMdnj"),
                     image: NetworkImage(data.poster!),
-                    filterQuality: FilterQuality.high,
-                    height: 0.8 * sh,
+                    height: 0.84 * sh,
                     width: sw,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fitHeight,
                   ),
                 ),
                 Positioned(
@@ -108,11 +106,15 @@ class ImdbDetailedScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 60),
-                    child: ActionButtons(),
-                  ),
+                Container(
+                  width: 1 * sw,
+                  height: 30,
+                  color: kDarkBlue,
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 60, vertical: 10),
+                  child: ActionButtons(),
                 ),
               ],
             ),
