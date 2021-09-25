@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:imdb_movie_application/screen/imdb_screen/imdb_movie_screen.dart';
+import 'package:imdb_movie_application/themes.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,9 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Imdb api demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: Themes.mainTheme,
       home: ImdbMovieScreen(),
     );
   }
